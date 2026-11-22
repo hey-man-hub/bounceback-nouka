@@ -1,0 +1,119 @@
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  overscroll-behavior: none;
+  background: #3d2b1a;
+  color: #f3e3c0;
+  font-family: "Comic Sans MS", cursive;
+}
+#wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#game {
+  display: block;
+  width: min(calc(100vw - 4px), calc((100vh - 54px) * 16 / 9));
+  width: min(calc(100vw - 4px), calc((100dvh - 54px) * 16 / 9));
+  aspect-ratio: 16 / 9;
+  background: #6bb7a8;
+  border: 2px solid #1f140a;
+  cursor: crosshair;
+  touch-action: none;
+}
+#bar {
+  display: flex;
+  gap: 8px;
+  margin: 4px 0;
+  order: 2;
+}
+#pad {
+  display: none;
+  order: 1;
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 0;
+  max-height: 520px;
+  box-sizing: border-box;
+  padding: 8px 10px;
+}
+body[data-pad="career"] #pad, body[data-pad="fishing"] #pad {
+  display: block;
+}
+#padCareer, #padFish {
+  display: none;
+  width: 100%;
+  height: 100%;
+  gap: 10px;
+}
+body[data-pad="career"] #padCareer {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+}
+body[data-pad="fishing"] #padFish {
+  display: flex;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 0;
+}
+.row {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+  min-height: 0;
+}
+#pad button {
+  flex: 1;
+  min-height: 0;
+  font-size: clamp(24px, 7vw, 48px);
+  border-radius: 18px;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+#pad button.on {
+  background: #ffe45e;
+}
+button {
+  font: inherit;
+  background: #c98b3c;
+  border: 3px solid #1f140a;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+button:hover {
+  background: #e0a354;
+}
+@media (orientation: landscape) and (max-height: 520px) {
+  #wrap {
+    flex-direction: row;
+  }
+  #game {
+    width: min(calc(100vw - 100px), calc((100vh - 4px) * 16 / 9));
+    width: min(calc(100vw - 100px), calc((100dvh - 4px) * 16 / 9));
+  }
+  #bar {
+    flex-direction: column;
+    margin: 0 6px;
+    order: 0;
+  }
+  #bar button {
+    width: 84px;
+    padding: 8px 4px;
+    font-size: 14px;
+  }
+}

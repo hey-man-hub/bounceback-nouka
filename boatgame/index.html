@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BounceBack Nouka</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="wrap">
+    <canvas id="game"></canvas>
+    <div id="pad">
+      <div id="padCareer">
+        <div class="col">
+          <button data-btn="up">&#9650;</button>
+          <button data-btn="down">&#9660;</button>
+        </div>
+        <div class="col">
+          <button data-btn="f">F</button>
+          <div class="row">
+            <button data-btn="slow">SLOW</button>
+            <button data-btn="fast">FAST</button>
+          </div>
+        </div>
+      </div>
+      <div id="padFish">
+        <button data-btn="hold">HOLD</button>
+      </div>
+    </div>
+    <div id="bar">
+      <button id="pauseBtn">P pause</button>
+      <button id="restartBtn">R restart</button>
+      <button id="menuBtn">Menu</button>
+    </div>
+  </div>
+<script src="game.js"></script>
+</body>
+</html>
